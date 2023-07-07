@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import {ConfigLayerMeta, InputConfig} from 'c12';
 import {NuxtConfig} from '@nuxt/schema';
-import tailwindTypography from '@tailwindcss/typography';
 
 export default defineNuxtConfig({
-  target: 'static',
+  ssr: false,
+  target: "static",
   devtools: { enabled: true },
   css: [
     "primevue/resources/themes/lara-light-blue/theme.css",
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     ],
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    baseURL: '/felipesanchezweb-nuxt/',
   },
   content: {},
 
