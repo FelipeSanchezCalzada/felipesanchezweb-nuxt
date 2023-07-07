@@ -4,13 +4,13 @@ import {random} from 'lodash';
 
 const currentYear = new Date().getFullYear()
 const backgroundImageStyle = {
-  backgroundImage: `url('${useRuntimeConfig().public.baseURL}img/bg-img-${random(1, 2, false)}.webp')`,
+  backgroundImage: `url('img/bg-img-${random(1, 2, false)}.webp')`,
 }
 </script>
 
 <template>
   <div class="bg-abstract-image min-h-screen antialiased text-slate-500 dark:text-slate-400"
-       :style="backgroundImageStyle">
+       :style="backgroundImageStyle" >
     <div class="backdrop-blur-md sm:py-1 sm:px-[3rem] lg:py-3 lg:px-[6rem] xl:py-5 xl:px-[13rem] 2xl:py-7 2xl:px-[18rem]">
       <div class="sm:rounded-3xl hadow-lg text-white bg-black  bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <div class="flex flex-col justify-between items-center px-5 sm:px-12">
