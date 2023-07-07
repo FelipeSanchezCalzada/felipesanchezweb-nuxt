@@ -4,7 +4,7 @@ import {random} from 'lodash';
 
 const currentYear = new Date().getFullYear()
 const backgroundImageStyle = {
-  backgroundImage: `url('img/bg-img-${random(1, 2, false)}.webp')`,
+  backgroundImage: `url('/img/bg-img-${random(1, 2, false)}.webp')`,
 }
 </script>
 
