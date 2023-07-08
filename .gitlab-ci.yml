@@ -27,6 +27,6 @@ dockerize-app:
   before_script:
     - docker info
   script:
-    - docker build -t $IMAGE_TAG .
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_HOST
+    - docker build -t $IMAGE_TAG .
     - docker push $IMAGE_TAG
