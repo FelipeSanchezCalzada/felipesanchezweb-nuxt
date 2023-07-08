@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  felipesanchezweb-nuxt:
+    image: docker-internal.felipesanchezweb.es/felipesanchezweb-nuxt:latest
+    container_name: nexus3
+    restart: unless-stopped
+    networks:
+      - internal-services-network
+
+networks:
+  internal-services-network:
+    name: internal-services-network
+    driver: bridge
