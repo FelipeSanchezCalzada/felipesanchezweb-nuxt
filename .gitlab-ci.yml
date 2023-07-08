@@ -1,0 +1,15 @@
+# I want a job that run pnpm install and pnpm run build
+# and then build de Docker image and push it to the registry
+# and then deploy the app to docker-compose
+
+image: node:18
+stages:
+  - build
+  - deploy
+
+build-nuxt-app:
+  stage: build
+  script:
+    - npm install -g pnpm
+    - pnpm install
+    - pnpm run build
