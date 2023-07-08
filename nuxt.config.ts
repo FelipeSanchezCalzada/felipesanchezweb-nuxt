@@ -3,7 +3,6 @@ import {ConfigLayerMeta, InputConfig} from 'c12';
 import {NuxtConfig} from '@nuxt/schema';
 
 export default defineNuxtConfig({
-  target: "static",
   devtools: { enabled: true },
   css: [
     "primevue/resources/themes/lara-light-blue/theme.css",
@@ -24,9 +23,11 @@ export default defineNuxtConfig({
       'defineStore',
     ],
   },
-  app: {
-    baseURL: '/felipesanchezweb-nuxt/',
+  nitro: {
+    compressPublicAssets: true,
+    prerender: {
+      crawlLinks: true
+    }
   },
-  content: {},
 
 } as InputConfig<NuxtConfig, ConfigLayerMeta>)

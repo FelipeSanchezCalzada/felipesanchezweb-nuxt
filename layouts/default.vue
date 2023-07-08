@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import {random} from 'lodash';
+import random from 'lodash/random';
 
 const currentYear = new Date().getFullYear()
 const backgroundImageStyle = {
