@@ -11,7 +11,7 @@ variables:
 
 stages:
 #  - build
-  - dockerize
+#  - dockerize
   - deploy
 
 #build-nuxt-app:
@@ -21,15 +21,15 @@ stages:
 #    - pnpm install
 #    - pnpm run build
 
-dockerize-app:
-  stage: dockerize
-  image: docker:20.10.16
-  services:
-    - docker:20.10.16-dind
-  script:
-    - docker build -t $IMAGE_TAG .
-    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY
-    - docker push $IMAGE_TAG
+#dockerize-app:
+#  stage: dockerize
+#  image: docker:20.10.16
+#  services:
+#    - docker:20.10.16-dind
+#  script:
+#    - docker build -t $IMAGE_TAG .
+#    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY
+#    - docker push $IMAGE_TAG
 
 deploy-app-in-remote-host:
   stage: deploy
