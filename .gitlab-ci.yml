@@ -7,6 +7,8 @@ variables:
   IMAGE_TAG: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt:$CI_COMMIT_REF_SLUG
   IMAGE_TAG_LATEST: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt:latest
 
+  SSH_HOST: 192.1.30.0
+
 stages:
 #  - build
   - dockerize
@@ -24,9 +26,13 @@ dockerize-app:
   image: docker:20.10.16
   services:
     - docker:20.10.16-dind
-  before_script:
-    - docker info
   script:
     - docker build -t $IMAGE_TAG .
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY
     - docker push $IMAGE_TAG
+
+deploy-app-in-remote-host:
+  stage: deploy
+  image: bash:5.2
+  script:
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" "docker ps"
