@@ -2,7 +2,7 @@
 # and then build de Docker image and push it to the registry
 # and then deploy the app to docker-compose
 
-image: node:18
+image: node:18-alpine
 stages:
   - build
   - deploy
