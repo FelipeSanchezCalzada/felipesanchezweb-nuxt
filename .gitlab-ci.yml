@@ -15,12 +15,12 @@ stages:
   - dockerize
   - deploy
 
-build-nuxt-app:
-  stage: build
-  script:
-    - npm install -g pnpm
-    - pnpm install
-    - pnpm run build
+#build-nuxt-app:
+#  stage: build
+#  script:
+#    - npm install -g pnpm
+#    - pnpm install
+#    - pnpm run build
 
 dockerize-app:
   stage: dockerize
