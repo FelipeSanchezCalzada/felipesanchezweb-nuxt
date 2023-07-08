@@ -3,7 +3,7 @@ version: "3.8"
 services:
   felipesanchezweb-nuxt:
     image: docker-internal.felipesanchezweb.es/felipesanchezweb-nuxt:latest
-    container_name: nexus3
+    container_name: felipesanchezweb-nuxt
     restart: unless-stopped
     networks:
       - internal-services-network
