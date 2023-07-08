@@ -2,6 +2,14 @@
 import Hero from '~/components/landing/hero.vue';
 import FeaturedTechnologies from '~/components/landing/featured-technologies/FeaturedTechnologies.vue';
 import CVTimeline, {TimelineItemProps} from '~/components/landing/CVTimeline.vue';
+const experienceYears = new Date().getFullYear() - 2020;
+
+useHead({
+  title: 'Felipe Sánchez | Home',
+  meta: [
+    { name: 'description', content: `Desarrollador con más de ${experienceYears} años de experiencia especializado en Angular, Vue & Nuxt, Django REST Framework y Kubernetes`}
+  ],
+})
 
 const timelineItems: TimelineItemProps[] = [
   {
