@@ -4,32 +4,33 @@
 
 variables:
   DOCKER_PRIVATE_REGISTRY: docker-internal.felipesanchezweb.es
-  IMAGE_TAG: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt:$CI_COMMIT_REF_SLUG
-  IMAGE_TAG_LATEST: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt:latest
+  BASE_IMAGE_TAG: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt
+  IMAGE_TAG: $BASE_IMAGE_TAG:$CI_COMMIT_REF_SLUG
+  IMAGE_TAG_LATEST: $BASE_IMAGE_TAG:latest
 
   SSH_HOST: 192.1.30.0
 
 stages:
 #  - build
-#  - dockerize
+  - dockerize
   - deploy
 
-#build-nuxt-app:
-#  stage: build
-#  script:
-#    - npm install -g pnpm
-#    - pnpm install
-#    - pnpm run build
+build-nuxt-app:
+  stage: build
+  script:
+    - npm install -g pnpm
+    - pnpm install
+    - pnpm run build
 
-#dockerize-app:
-#  stage: dockerize
-#  image: docker:20.10.16
-#  services:
-#    - docker:20.10.16-dind
-#  script:
-#    - docker build -t $IMAGE_TAG .
-#    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY
-#    - docker push $IMAGE_TAG
+dockerize-app:
+  stage: dockerize
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  script:
+    - docker build -t $IMAGE_TAG -t $IMAGE_TAG_LATEST .
+    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY
+    - docker push $BASE_IMAGE_TAG --all-tags
 
 deploy-app-in-remote-host:
   stage: deploy
@@ -37,6 +38,9 @@ deploy-app-in-remote-host:
   before_script:
     - apk add --no-cache openssh sshpass
   script:
+    - sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no docker-compose.yaml "$SSH_USER@$SSH_HOST":docker-compose.yaml
     - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_HOST" 
-      "docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY"
+      "docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_PRIVATE_REGISTRY &&
+      docker compose pull &&
+      docker compose up --force-recreate --build -d"
 
