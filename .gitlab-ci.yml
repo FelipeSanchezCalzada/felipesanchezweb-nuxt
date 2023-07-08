@@ -4,8 +4,8 @@
 
 variables:
   DOCKER_PRIVATE_REGISTRY: docker-internal.felipesanchezweb.es
-  IMAGE_TAG: $DOCKER_PRIVATE_REGISTRY.felipesanchezweb-nuxt:$CI_COMMIT_REF_SLUG
-  IMAGE_TAG_LATEST: $DOCKER_PRIVATE_REGISTRY.felipesanchezweb-nuxt:latest
+  IMAGE_TAG: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt:$CI_COMMIT_REF_SLUG
+  IMAGE_TAG_LATEST: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt:latest
 
 stages:
 #  - build
