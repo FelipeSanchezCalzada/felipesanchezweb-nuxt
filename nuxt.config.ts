@@ -3,6 +3,9 @@ import {ConfigLayerMeta, InputConfig} from 'c12';
 import {NuxtConfig} from '@nuxt/schema';
 
 export default defineNuxtConfig({
+  routeRules: {
+    '/': {redirect: '/home'}
+  },
   devtools: { enabled: true },
   css: [
     "primevue/resources/themes/lara-light-blue/theme.css",
