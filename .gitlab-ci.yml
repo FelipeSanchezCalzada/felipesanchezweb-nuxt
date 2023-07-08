@@ -5,6 +5,7 @@
 image: node:18-alpine
 stages:
   - build
+  - dockerize
   - deploy
 
 build-nuxt-app:
@@ -13,3 +14,13 @@ build-nuxt-app:
     - npm install -g pnpm
     - pnpm install
     - pnpm run build
+
+dockerize-app:
+  stage: dockerize
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker info
+  script:
+    - docker build -t felipesanchezweb-nuxt .
