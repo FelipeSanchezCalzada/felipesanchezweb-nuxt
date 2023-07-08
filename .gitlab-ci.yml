@@ -2,18 +2,22 @@
 # and then build de Docker image and push it to the registry
 # and then deploy the app to docker-compose
 
-image: node:18-alpine
+variables:
+  DOCKER_HOST: docker-internal.felipesanchezweb.es
+  IMAGE_TAG: $DOCKER_HOST.felipesanchezweb-nuxt:$CI_COMMIT_REF_SLUG
+  IMAGE_TAG_LATEST: $DOCKER_HOST.felipesanchezweb-nuxt:latest
+
 stages:
-  - build
+#  - build
   - dockerize
   - deploy
 
-build-nuxt-app:
-  stage: build
-  script:
-    - npm install -g pnpm
-    - pnpm install
-    - pnpm run build
+#build-nuxt-app:
+#  stage: build
+#  script:
+#    - npm install -g pnpm
+#    - pnpm install
+#    - pnpm run build
 
 dockerize-app:
   stage: dockerize
@@ -23,4 +27,6 @@ dockerize-app:
   before_script:
     - docker info
   script:
-    - docker build -t felipesanchezweb-nuxt .
+    - docker build -t $IMAGE_TAG .
+    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_HOST
+    - docker push $IMAGE_TAG
