@@ -37,6 +37,8 @@ Una vez creado el cliente podemos hacer las configuraciones básicas necesarias.
 
 ![img.png](/blog/img/configuracion-realm-keycloak/3.png)
 
+OJO! Si has desplegado Keycloak en un contenedor docker es posible que tengas que establecer la configuracion del realm "Frontend URL" con "http://localhost:8080" o tu URL externa
+
 ## Configurando el proyecto Django
 
 Vamos a usar la biblioteca [mozilla-django-oidc](https://github.com/mozilla/mozilla-django-oidc), 
