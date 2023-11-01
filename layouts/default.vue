@@ -14,7 +14,7 @@ const backgroundImageStyle = {
     <div class="backdrop-blur-md sm:py-1 sm:px-[3rem] lg:py-3 lg:px-[6rem] xl:py-5 xl:px-[13rem] 2xl:py-7 2xl:px-[18rem]">
       <div class="sm:rounded-3xl hadow-lg text-white bg-black  bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <div class="flex flex-col justify-between items-center px-5 sm:px-12">
-          <header class="w-full w-full py-4">
+          <header class="w-full py-4">
             <nav class="">
               <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex justify-between items-center text-lg order-1 md:order-1">
@@ -22,7 +22,7 @@ const backgroundImageStyle = {
                     <img src="/img/logo.svg" alt="FelipeSanchezWeb Logo">
                   </a>
                 </div>
-                <div class="flex font-m items-center flex space-x-12 items-center order-3 md:order-2">
+                <div class="flex font-m items-center space-x-12 order-3 md:order-2">
                   <NuxtLink href="/home">Inicio</NuxtLink>
                   <NuxtLink href="/blog">Blog</NuxtLink>
                 </div>

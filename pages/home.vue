@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Hero from '~/components/landing/hero.vue';
-import FeaturedTechnologies from '~/components/landing/featured-technologies/FeaturedTechnologies.vue';
 import CVTimeline, {TimelineItemProps} from '~/components/landing/CVTimeline.vue';
 import FeaturedTechSkills from '~/components/landing/FeaturedTechSkills.vue';
 const experienceYears = new Date().getFullYear() - 2020;
