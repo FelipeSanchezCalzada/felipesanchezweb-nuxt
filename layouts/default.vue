@@ -27,9 +27,18 @@ const backgroundImageStyle = {
                   <NuxtLink href="/blog">Blog</NuxtLink>
                 </div>
                 <div class="my-3 md:flex space-x-8 items-center order-2 md:order-3">
-                  <a href="https://www.linkedin.com/in/felipe-sanchez-calzada/" target="_blank"><Icon name="bxl:linkedin" size="2rem"></Icon></a>
-                  <a href="https://github.com/FelipeSanchezCalzada" target="_blank"><Icon name="bxl:github" size="2rem"></Icon></a>
-                  <a href="https://www.twitch.tv/felipesanchezweb" target="_blank" ><Icon name="bxl:twitch" size="2rem"></Icon></a>
+                  <a href="https://www.linkedin.com/in/felipe-sanchez-calzada/" target="_blank" aria-label="Linkedin">
+                    <span class="hidden"> Linkedin </span>
+                    <Icon name="bxl:linkedin" size="2rem"></Icon>
+                  </a>
+                  <a href="https://github.com/FelipeSanchezCalzada" target="_blank" aria-label="GitHub">
+                    <span class="hidden"> Github </span>
+                    <Icon name="bxl:github" size="2rem"></Icon>
+                  </a>
+<!--                  <a href="https://www.twitch.tv/felipesanchezweb" target="_blank" >-->
+<!--                    <span class="hidden"> Twitch </span>-->
+<!--                    <Icon name="bxl:twitch" size="2rem"></Icon>-->
+<!--                  </a>-->
 
                   <!--                    <a href="#">Log in</a>-->
 <!--                    <a href="#"><button class="bg-transparent font-m bg-white text-gray-800  py-1 px-3  rounded-lg">Sign Up-->
@@ -44,14 +53,14 @@ const backgroundImageStyle = {
 
           <footer>
             <div class="p-4 mt-6 mb-4">
-              <h5 class="text-xs  sm:text-lg text-center">
+              <p class="text-xs  sm:text-lg text-center">
                 Gracias por visitar mi sitio web <Icon name="ic:twotone-favorite" size="1.5rem"></Icon>
                 <br class="sm:hidden">
                 ¡Nos vemos pronto!
-              </h5>
-              <h5 class="text-xs sm:text-lg text-center mt-2">
+              </p>
+              <p class="text-xs sm:text-lg text-center mt-2">
                 © {{currentYear}} Felipe Sánchez Calzada. All rights reserved.
-              </h5>
+              </p>
             </div>
           </footer>
 

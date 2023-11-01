@@ -1,7 +1,3 @@
-# I want a job that run pnpm install and pnpm run build
-# and then build de Docker image and push it to the registry
-# and then deploy the app to docker-compose
-
 variables:
   DOCKER_PRIVATE_REGISTRY: docker-internal.felipesanchezweb.es
   BASE_IMAGE_TAG: $DOCKER_PRIVATE_REGISTRY/felipesanchezweb-nuxt

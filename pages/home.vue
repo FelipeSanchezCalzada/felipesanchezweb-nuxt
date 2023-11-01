@@ -2,6 +2,7 @@
 import Hero from '~/components/landing/hero.vue';
 import FeaturedTechnologies from '~/components/landing/featured-technologies/FeaturedTechnologies.vue';
 import CVTimeline, {TimelineItemProps} from '~/components/landing/CVTimeline.vue';
+import FeaturedTechSkills from '~/components/landing/FeaturedTechSkills.vue';
 const experienceYears = new Date().getFullYear() - 2020;
 
 useHead({
@@ -9,6 +10,9 @@ useHead({
   meta: [
     { name: 'description', content: `Desarrollador con más de ${experienceYears} años de experiencia especializado en Angular, Vue & Nuxt, Django REST Framework y Kubernetes`}
   ],
+  htmlAttrs: {
+    lang: 'es'
+  }
 })
 
 const timelineItems: TimelineItemProps[] = [
@@ -54,19 +58,19 @@ const timelineItems: TimelineItemProps[] = [
 
 <template>
   <div>
-
     <div class="min-h-[calc(100vh-10rem)]">
       <hero></hero>
     </div>
-    <FeaturedTechnologies></FeaturedTechnologies>
-    <div class="mt-[10rem]">
+    <FeaturedTechSkills></FeaturedTechSkills>
+    <div class="mt-[10rem] mx-auto max-w-4xl">
       <CVTimeline :items="timelineItems"></CVTimeline>
-
     </div>
 
   </div>
 </template>
 
 <style scoped>
+
+
 
 </style>
