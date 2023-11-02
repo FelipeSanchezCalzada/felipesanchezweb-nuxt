@@ -3,6 +3,13 @@ import {ConfigLayerMeta, InputConfig} from 'c12';
 import {NuxtConfig} from '@nuxt/schema';
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+          { rel: 'icon', type: 'image/svg+xml', href: "/favicon.svg" }
+      ]
+    }
+  },
   routeRules: {
     '/': {redirect: '/home'}
   },
