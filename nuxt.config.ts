@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     "primevue/resources/themes/lara-light-blue/theme.css",
-    "primevue/resources/primevue.css"
+    "primevue/resources/primevue.css",
   ],
   build: {
     transpile: ["primevue"]
@@ -39,5 +39,12 @@ export default defineNuxtConfig({
       crawlLinks: true
     }
   },
-
+  content: {
+    highlight: {
+      theme: 'dracula',
+      preload: [
+          'python'
+      ]
+    },
+  },
 } as InputConfig<NuxtConfig, ConfigLayerMeta>)

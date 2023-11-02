@@ -45,13 +45,13 @@ Vamos a usar la biblioteca [mozilla-django-oidc](https://github.com/mozilla/mozi
 que permite utilizar cualquier servidor que siga [OpenID Connect](https://openid.net/connect/).
 
 Primero instalamos mozilla-django-oidc y pyjwt:
-```Bash
+```bash
 pip install mozilla-django-oidc
 pip install pyjwt
 ```
 Después vamos a pasar a especificar las configuraciones necesarias en el archivo settings.py de Django:
 
-```Python
+```python
 ########################################################################################################################
 # Configuraciones para Modilla OIDC
 ########################################################################################################################
@@ -110,7 +110,7 @@ En ese mismo archivo podemos crear el BasePermission que nos permitirá autentic
 
 Este archivo puede estar en cualquier parte.
 
-```Python
+```python
 from mozilla_django_oidc.auth import OIDCAuthenticationBackend
 import jwt
 from django.conf import settings
@@ -180,7 +180,7 @@ Hay que meter esa configuración en AUTHENTICATION_BACKENDS
 
 Para usar la autenticación por roles definida solo se puede hacer mediante la instanciación completa por constructor. A continuacion un ejemplo:
 
-```Python
+```python
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -190,7 +190,7 @@ class UserViewSet(viewsets.ModelViewSet):
 ```
 
 Por ultimo solo queda añadir las URLs de mozilla oidc a los urlpatterns (solo si los necesitamos):
-```Python
+```python
 path('oidc/', include('mozilla_django_oidc.urls')),
 ```
 
