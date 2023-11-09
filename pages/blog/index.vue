@@ -66,25 +66,24 @@ fetchFilteredContent()
     </div>
 
     <div class="flex justify-center my-3">
-      <div class="flex">
+      <div class="flex flex-wrap justify-center">
         <button
             @click="selectedTagsToFilter = []"
             :class="[
                 selectedTagsToFilter.length === 0 ? 'bg-blue-950' : 'bg-transparent '
             ]"
-            class="hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            class="my-2 hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           Todos los posts
         </button>
-        <div v-for="tag in allTags" :key="tag">
-          <button
-              @click="toggleTag(tag)"
-              :class="[
-                selectedTagsToFilter.includes(tag) ? 'bg-blue-950' : 'bg-transparent '
-              ]"
-              class="hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-2">
-            {{tag}}
-          </button>
-        </div>
+        <button
+            v-for="tag in allTags" :key="tag"
+            @click="toggleTag(tag)"
+            :class="[
+              selectedTagsToFilter.includes(tag) ? 'bg-blue-950' : 'bg-transparent '
+            ]"
+            class="my-2  hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-2">
+          {{tag}}
+        </button>
       </div>
     </div>
 
