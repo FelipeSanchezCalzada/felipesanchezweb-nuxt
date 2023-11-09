@@ -19,6 +19,7 @@
     "@vueuse/nuxt": "^10.2.1",
     "nuxt": "^3.6.1",
     "nuxt-icon": "^0.4.2",
+    "sass": "^1.69.5",
     "typescript": "^5.1.6"
   },
   "dependencies": {

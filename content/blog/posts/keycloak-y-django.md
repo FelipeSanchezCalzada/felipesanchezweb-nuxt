@@ -30,12 +30,13 @@ En este articulo no voy explicar como se crea un proyecto. Simplemente crea uno 
 ## Configuración del Realm de Keycloak
 Para configurar el Realm primero creamos un cliente especifico para el proyecto:
 
-![img.png](/blog/img/configuracion-realm-keycloak/1.png)
-![img.png](/blog/img/configuracion-realm-keycloak/2.png)
+<img src="/blog/img/configuracion-realm-keycloak/1.png" alt="drawing" class="markdown-image-100-75"/>
+<img src="/blog/img/configuracion-realm-keycloak/2.png" alt="drawing" class="markdown-image-100-75"/>
+
 
 Una vez creado el cliente podemos hacer las configuraciones básicas necesarias. ¡No olvides guardar!:
 
-![img.png](/blog/img/configuracion-realm-keycloak/3.png)
+<img src="/blog/img/configuracion-realm-keycloak/3.png" alt="drawing" class="markdown-image-100-75"/>
 
 OJO! Si has desplegado Keycloak en un contenedor docker es posible que tengas que establecer la configuracion del realm "Frontend URL" con "http://localhost:8080" o tu URL externa
 
@@ -96,7 +97,7 @@ OIDC_OP_JWKS_ENDPOINT = 'http://localhost:8005/auth/realms/Django_PoC/protocol/o
 Aquí los puntos importantes son las configuraciones de la seccion **mozilla-django-oidc with Keycloa**.
 la configuración OIDC_RP_CLIENT_SECRET se puede obtener desde Keycloack:
 
-![img.png](/blog/img/configuracion-realm-keycloak/4.png)
+<img src="/blog/img/configuracion-realm-keycloak/4.png" alt="drawing" class="markdown-image-100-75"/>
 
 El resto de configuraciones puede obtenerse en la URL http://localhost:8005/auth/realms/Django_Keycloak_Tutotial/.well-known/openid-configuration
 Hay que cambiar la URL con los datos de tu Realm, host y puerto:
