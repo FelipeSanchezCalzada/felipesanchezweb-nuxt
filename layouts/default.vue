@@ -11,7 +11,7 @@ const backgroundImageStyle = {
 <template>
   <div class="bg-abstract-image min-h-screen antialiased text-slate-500 dark:text-slate-400"
        :style="backgroundImageStyle" >
-    <div class="backdrop-blur-md sm:py-1 sm:px-[3rem] lg:py-3 lg:px-[6rem] xl:py-5 xl:px-[13rem] 2xl:py-7 2xl:px-[18rem]">
+    <div class="backdrop-blur-3xl sm:py-1 sm:px-[3rem] lg:py-3 lg:px-[6rem] xl:py-5 xl:px-[13rem] 2xl:py-7 2xl:px-[18rem]">
       <div class="sm:rounded-3xl hadow-lg text-white bg-black  bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <div class="flex flex-col justify-between items-center px-5 sm:px-12">
           <header class="w-full py-4">
