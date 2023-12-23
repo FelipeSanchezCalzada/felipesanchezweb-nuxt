@@ -1,5 +1,5 @@
 ---
-title: Las claves para una domótica fiable
+title: Las claves para una domótica fiable 👌
 description: ¡Si estas pensando en domotizar tu casa, tienes que leer este post para no caer en los errores mas típicos!
 featuredImagePath: /blog/img/las-claves-para-una-domótica-fiable/cabecera.png
 date: 2023-11-18
@@ -12,8 +12,8 @@ published: true
 
 La domótica es una forma de hacer tu casa más inteligente para hacerte la vida más cómoda. 
 A mucha gente se le olvida que la principal razón para tener una casa inteligente es la comodidad, no sirve de nada poner 
-cientos de sensores y actuadores si de verdad no están aportando un beneficio a parte de "poder encender las luces con el móvil" o 
-poder "fardar" con tus amigos.
+cientos de sensores y actuadores si de verdad no están aportando un beneficio aparte de "poder encender las luces con el móvil" o 
+poder presumir con tus amigos 😜.
 
 Durante mis aventuras y desventuras haciendo mi casa inteligente he aprendido algunas cosas que me gustaría compartir contigo, para evitar que cometas los mismos errores que yo.
 
